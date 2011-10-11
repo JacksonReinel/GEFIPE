@@ -83,5 +83,8 @@ namespace JSistemas.UIL.Base.Cadastro
             if (this.lblInfo.Text != String.Empty)
             { Clipboard.SetText(this.lblInfo.Text); }
         }
+
+        private void botaoOpcoesBase_Click(object sender, EventArgs e)
+        { menuOpcoesBase.Show(this.botaoOpcoesBase, 16, 16); }
     }
 }

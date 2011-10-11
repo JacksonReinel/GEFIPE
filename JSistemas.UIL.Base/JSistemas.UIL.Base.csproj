@@ -48,8 +48,12 @@
     <Compile Include="Cadastro\CadastroBase.Designer.cs">
       <DependentUpon>CadastroBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UILBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +65,10 @@
     <EmbeddedResource Include="Cadastro\CadastroBase.resx">
       <DependentUpon>CadastroBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UILBase.resx">
       <DependentUpon>UILBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +78,9 @@
       <Project>{1FDDAD6A-A7DE-4813-A121-9911D7B10710}</Project>
       <Name>JSistemas.BLL.Base</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting_tools.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

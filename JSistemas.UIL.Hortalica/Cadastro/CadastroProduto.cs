@@ -19,7 +19,11 @@ namespace JSistemas.UIL.Hortalica.Cadastro
         }
 
         public CadastroProduto()
-        { InitializeComponent(); }
+        {
+            InitializeComponent();
+            this.txtNome.ContextMenuStrip = menuOpcoesBase;
+            base.panelTitulos.ContextMenuStrip = menuOpcoesBase;
+        }
 
         private String FNome
         {

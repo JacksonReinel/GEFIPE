@@ -28,70 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNome = new System.Windows.Forms.Label();
-            this.lblPrecoUnitario = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtPreco = new System.Windows.Forms.TextBox();
+            this.lblPrecoUnitario = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.testeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelTitulos.SuspendLayout();
+            this.panelCampos.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNome
+            // panelTitulos
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(51, 15);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 2;
-            this.lblNome.Text = "Nome";
+            this.panelTitulos.ContextMenuStrip = null;
+            this.panelTitulos.Controls.Add(this.lblPrecoUnitario);
+            this.panelTitulos.Controls.Add(this.lblNome);
+            this.panelTitulos.Size = new System.Drawing.Size(132, 184);
             // 
-            // lblPrecoUnitario
+            // panelCampos
             // 
-            this.lblPrecoUnitario.AutoSize = true;
-            this.lblPrecoUnitario.Location = new System.Drawing.Point(12, 41);
-            this.lblPrecoUnitario.Name = "lblPrecoUnitario";
-            this.lblPrecoUnitario.Size = new System.Drawing.Size(74, 13);
-            this.lblPrecoUnitario.TabIndex = 3;
-            this.lblPrecoUnitario.Text = "Preço Unitário";
+            this.panelCampos.Controls.Add(this.txtNome);
+            this.panelCampos.Controls.Add(this.txtPreco);
+            this.panelCampos.Location = new System.Drawing.Point(132, 32);
+            this.panelCampos.Size = new System.Drawing.Size(462, 184);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(92, 12);
+            this.txtNome.Location = new System.Drawing.Point(12, 12);
             this.txtNome.MaxLength = 150;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(290, 20);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 6;
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(92, 38);
+            this.txtPreco.Location = new System.Drawing.Point(12, 38);
             this.txtPreco.MaxLength = 18;
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(100, 20);
-            this.txtPreco.TabIndex = 5;
+            this.txtPreco.TabIndex = 7;
+            // 
+            // lblPrecoUnitario
+            // 
+            this.lblPrecoUnitario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPrecoUnitario.AutoSize = true;
+            this.lblPrecoUnitario.Location = new System.Drawing.Point(46, 41);
+            this.lblPrecoUnitario.Name = "lblPrecoUnitario";
+            this.lblPrecoUnitario.Size = new System.Drawing.Size(74, 13);
+            this.lblPrecoUnitario.TabIndex = 5;
+            this.lblPrecoUnitario.Text = "Preço Unitário";
+            // 
+            // lblNome
+            // 
+            this.lblNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(85, 15);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 4;
+            this.lblNome.Text = "Nome";
+            // 
+            // testeToolStripMenuItem1
+            // 
+            this.testeToolStripMenuItem1.Name = "testeToolStripMenuItem1";
+            this.testeToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.testeToolStripMenuItem1.Text = "Teste";
             // 
             // CadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(594, 142);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.txtPreco);
-            this.Controls.Add(this.lblPrecoUnitario);
-            this.Controls.Add(this.lblNome);
+            this.ClientSize = new System.Drawing.Size(594, 272);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de Produto";
-            this.Controls.SetChildIndex(this.lblNome, 0);
-            this.Controls.SetChildIndex(this.lblPrecoUnitario, 0);
-            this.Controls.SetChildIndex(this.txtPreco, 0);
-            this.Controls.SetChildIndex(this.txtNome, 0);
+            this.Controls.SetChildIndex(this.panelTitulos, 0);
+            this.Controls.SetChildIndex(this.panelCampos, 0);
+            this.panelTitulos.ResumeLayout(false);
+            this.panelTitulos.PerformLayout();
+            this.panelCampos.ResumeLayout(false);
+            this.panelCampos.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblPrecoUnitario;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtPreco;
+        private System.Windows.Forms.ToolStripMenuItem testeToolStripMenuItem1;
+
     }
 }

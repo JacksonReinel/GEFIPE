@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroBase));
             this.panelInferior = new System.Windows.Forms.Panel();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.panelInferiorEsquerdo = new System.Windows.Forms.Panel();
             this.botaoExcluir = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +41,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.botaoGravar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelTopoBase = new System.Windows.Forms.Panel();
+            this.labelTopoStatus = new System.Windows.Forms.Label();
+            this.botaoOpcoesBase = new System.Windows.Forms.Button();
+            this.menuOpcoesBase = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.panelTitulos = new System.Windows.Forms.Panel();
+            this.panelCampos = new System.Windows.Forms.Panel();
             this.panelInferior.SuspendLayout();
             this.panelInferiorEsquerdo.SuspendLayout();
+            this.panelTopoBase.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelInferior
@@ -55,16 +64,6 @@
             this.panelInferior.Size = new System.Drawing.Size(594, 55);
             this.panelInferior.TabIndex = 0;
             // 
-            // lblInfo
-            // 
-            this.lblInfo.BackColor = System.Drawing.SystemColors.Info;
-            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblInfo.Location = new System.Drawing.Point(259, 0);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(335, 55);
-            this.lblInfo.TabIndex = 2;
-            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
-            // 
             // lblID
             // 
             this.lblID.BackColor = System.Drawing.SystemColors.Info;
@@ -76,6 +75,25 @@
             this.lblID.Text = "Novo Registro";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblID.Click += new System.EventHandler(this.lblID_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(259, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1, 55);
+            this.panel2.TabIndex = 7;
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.BackColor = System.Drawing.SystemColors.Info;
+            this.lblInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInfo.Location = new System.Drawing.Point(259, 0);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(335, 55);
+            this.lblInfo.TabIndex = 2;
+            this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
             // panelInferiorEsquerdo
             // 
@@ -147,31 +165,82 @@
             this.panel1.Size = new System.Drawing.Size(594, 1);
             this.panel1.TabIndex = 1;
             // 
-            // panel2
+            // panelTopoBase
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(259, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 55);
-            this.panel2.TabIndex = 7;
+            this.panelTopoBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelTopoBase.Controls.Add(this.labelTopoStatus);
+            this.panelTopoBase.Controls.Add(this.botaoOpcoesBase);
+            this.panelTopoBase.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopoBase.Location = new System.Drawing.Point(0, 0);
+            this.panelTopoBase.Name = "panelTopoBase";
+            this.panelTopoBase.Size = new System.Drawing.Size(594, 32);
+            this.panelTopoBase.TabIndex = 2;
+            // 
+            // labelTopoStatus
+            // 
+            this.labelTopoStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTopoStatus.Location = new System.Drawing.Point(32, 0);
+            this.labelTopoStatus.Name = "labelTopoStatus";
+            this.labelTopoStatus.Size = new System.Drawing.Size(560, 30);
+            this.labelTopoStatus.TabIndex = 1;
+            this.labelTopoStatus.Text = "...";
+            this.labelTopoStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // botaoOpcoesBase
+            // 
+            this.botaoOpcoesBase.ContextMenuStrip = this.menuOpcoesBase;
+            this.botaoOpcoesBase.Dock = System.Windows.Forms.DockStyle.Left;
+            this.botaoOpcoesBase.Image = ((System.Drawing.Image)(resources.GetObject("botaoOpcoesBase.Image")));
+            this.botaoOpcoesBase.Location = new System.Drawing.Point(0, 0);
+            this.botaoOpcoesBase.Name = "botaoOpcoesBase";
+            this.botaoOpcoesBase.Size = new System.Drawing.Size(32, 30);
+            this.botaoOpcoesBase.TabIndex = 0;
+            this.botaoOpcoesBase.UseVisualStyleBackColor = true;
+            this.botaoOpcoesBase.Click += new System.EventHandler(this.botaoOpcoesBase_Click);
+            // 
+            // menuOpcoesBase
+            // 
+            this.menuOpcoesBase.Name = "menuOpcoesBase";
+            this.menuOpcoesBase.Size = new System.Drawing.Size(153, 26);
+            // 
+            // panelTitulos
+            // 
+            this.panelTitulos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelTitulos.Location = new System.Drawing.Point(0, 32);
+            this.panelTitulos.Name = "panelTitulos";
+            this.panelTitulos.Padding = new System.Windows.Forms.Padding(0, 9, 9, 0);
+            this.panelTitulos.Size = new System.Drawing.Size(109, 204);
+            this.panelTitulos.TabIndex = 3;
+            // 
+            // panelCampos
+            // 
+            this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCampos.Location = new System.Drawing.Point(109, 32);
+            this.panelCampos.Name = "panelCampos";
+            this.panelCampos.Padding = new System.Windows.Forms.Padding(9, 9, 9, 0);
+            this.panelCampos.Size = new System.Drawing.Size(485, 204);
+            this.panelCampos.TabIndex = 4;
             // 
             // CadastroBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 292);
+            this.Controls.Add(this.panelCampos);
+            this.Controls.Add(this.panelTitulos);
+            this.Controls.Add(this.panelTopoBase);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelInferior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(600, 170);
+            this.MinimumSize = new System.Drawing.Size(600, 300);
             this.Name = "CadastroBase";
             this.ShowInTaskbar = false;
             this.Text = "CadastroBase";
             this.panelInferior.ResumeLayout(false);
             this.panelInferiorEsquerdo.ResumeLayout(false);
+            this.panelTopoBase.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -189,5 +258,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelTopoBase;
+        private System.Windows.Forms.Button botaoOpcoesBase;
+        private System.Windows.Forms.Label labelTopoStatus;
+        protected System.Windows.Forms.Panel panelTitulos;
+        protected System.Windows.Forms.Panel panelCampos;
+        protected System.Windows.Forms.ContextMenuStrip menuOpcoesBase;
     }
 }
