@@ -35,37 +35,36 @@
             this.testeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTitulos.SuspendLayout();
             this.panelCampos.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelTitulos
             // 
             this.panelTitulos.Controls.Add(this.lblNome);
             this.panelTitulos.Controls.Add(this.lblPrecoUnitario);
-            this.panelTitulos.Size = new System.Drawing.Size(132, 135);
-            this.panelTitulos.Controls.SetChildIndex(this.tituloIdentificador, 0);
+            this.panelTitulos.Size = new System.Drawing.Size(132, 184);
             this.panelTitulos.Controls.SetChildIndex(this.lblPrecoUnitario, 0);
             this.panelTitulos.Controls.SetChildIndex(this.lblNome, 0);
+            this.panelTitulos.Controls.SetChildIndex(this.tituloIdentificador, 0);
             // 
             // panelCampos
             // 
             this.panelCampos.Controls.Add(this.txtNome);
             this.panelCampos.Controls.Add(this.txtPreco);
-            this.panelCampos.Location = new System.Drawing.Point(135, 3);
-            this.panelCampos.Size = new System.Drawing.Size(446, 135);
-            this.panelCampos.Controls.SetChildIndex(this.lblID, 0);
+            this.panelCampos.Location = new System.Drawing.Point(132, 32);
+            this.panelCampos.Size = new System.Drawing.Size(462, 184);
             this.panelCampos.Controls.SetChildIndex(this.txtPreco, 0);
             this.panelCampos.Controls.SetChildIndex(this.txtNome, 0);
+            this.panelCampos.Controls.SetChildIndex(this.lblID, 0);
             // 
-            // lblID
+            // tabControl1
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.lblID.Size = new System.Drawing.Size(0, 13);
-            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tabControl1.Size = new System.Drawing.Size(594, 183);
             // 
-            // tituloIdentificador
+            // tabConsulta
             // 
-            this.tituloIdentificador.Location = new System.Drawing.Point(55, 9);
+            this.tabConsulta.Size = new System.Drawing.Size(586, 143);
             // 
             // txtNome
             // 
@@ -115,10 +114,13 @@
             this.ClientSize = new System.Drawing.Size(594, 272);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de Produto";
+            this.Controls.SetChildIndex(this.tabControl1, 0);
             this.panelTitulos.ResumeLayout(false);
             this.panelTitulos.PerformLayout();
             this.panelCampos.ResumeLayout(false);
             this.panelCampos.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabCadastro.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

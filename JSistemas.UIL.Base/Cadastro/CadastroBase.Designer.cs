@@ -216,21 +216,21 @@
             this.miOpcoesExcluirBase,
             this.toolStripSeparator1});
             this.menuOpcoesBase.Name = "menuOpcoesBase";
-            this.menuOpcoesBase.Size = new System.Drawing.Size(153, 54);
+            this.menuOpcoesBase.Size = new System.Drawing.Size(109, 32);
             // 
             // miOpcoesExcluirBase
             // 
             this.miOpcoesExcluirBase.Enabled = false;
             this.miOpcoesExcluirBase.Image = global::JSistemas.UIL.Base.Properties.Resources.delete;
             this.miOpcoesExcluirBase.Name = "miOpcoesExcluirBase";
-            this.miOpcoesExcluirBase.Size = new System.Drawing.Size(152, 22);
+            this.miOpcoesExcluirBase.Size = new System.Drawing.Size(108, 22);
             this.miOpcoesExcluirBase.Text = "Excluir";
             this.miOpcoesExcluirBase.Click += new System.EventHandler(this.excluirToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(105, 6);
             // 
             // panelTitulos
             // 
@@ -255,11 +255,8 @@
             // 
             // panelCampos
             // 
-
-            this.panelCampos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-
+            this.panelCampos.BackColor = System.Drawing.SystemColors.Control;
             this.panelCampos.Controls.Add(this.lblID);
-
             this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCampos.Location = new System.Drawing.Point(112, 3);
             this.panelCampos.Name = "panelCampos";
@@ -308,6 +305,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGUID});
