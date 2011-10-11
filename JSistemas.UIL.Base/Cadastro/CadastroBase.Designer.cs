@@ -213,6 +213,7 @@
             // 
             // panelCampos
             // 
+            this.panelCampos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panelCampos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCampos.Location = new System.Drawing.Point(109, 32);
             this.panelCampos.Name = "panelCampos";
