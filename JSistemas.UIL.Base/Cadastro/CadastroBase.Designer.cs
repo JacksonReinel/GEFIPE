@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroBase));
             this.panelInferior = new System.Windows.Forms.Panel();
             this.lblID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -190,7 +189,7 @@
             // 
             this.botaoOpcoesBase.ContextMenuStrip = this.menuOpcoesBase;
             this.botaoOpcoesBase.Dock = System.Windows.Forms.DockStyle.Left;
-            this.botaoOpcoesBase.Image = ((System.Drawing.Image)(resources.GetObject("botaoOpcoesBase.Image")));
+            this.botaoOpcoesBase.Image = global::JSistemas.UIL.Base.Properties.Resources.setting_tools;
             this.botaoOpcoesBase.Location = new System.Drawing.Point(0, 0);
             this.botaoOpcoesBase.Name = "botaoOpcoesBase";
             this.botaoOpcoesBase.Size = new System.Drawing.Size(32, 30);
@@ -201,7 +200,7 @@
             // menuOpcoesBase
             // 
             this.menuOpcoesBase.Name = "menuOpcoesBase";
-            this.menuOpcoesBase.Size = new System.Drawing.Size(153, 26);
+            this.menuOpcoesBase.Size = new System.Drawing.Size(61, 4);
             // 
             // panelTitulos
             // 
