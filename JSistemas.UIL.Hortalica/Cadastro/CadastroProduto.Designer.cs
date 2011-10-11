@@ -39,21 +39,37 @@
             // 
             // panelTitulos
             // 
-            this.panelTitulos.ContextMenuStrip = null;
-            this.panelTitulos.Controls.Add(this.lblPrecoUnitario);
             this.panelTitulos.Controls.Add(this.lblNome);
-            this.panelTitulos.Size = new System.Drawing.Size(132, 184);
+            this.panelTitulos.Controls.Add(this.lblPrecoUnitario);
+            this.panelTitulos.Size = new System.Drawing.Size(132, 135);
+            this.panelTitulos.Controls.SetChildIndex(this.tituloIdentificador, 0);
+            this.panelTitulos.Controls.SetChildIndex(this.lblPrecoUnitario, 0);
+            this.panelTitulos.Controls.SetChildIndex(this.lblNome, 0);
             // 
             // panelCampos
             // 
             this.panelCampos.Controls.Add(this.txtNome);
             this.panelCampos.Controls.Add(this.txtPreco);
-            this.panelCampos.Location = new System.Drawing.Point(132, 32);
-            this.panelCampos.Size = new System.Drawing.Size(462, 184);
+            this.panelCampos.Location = new System.Drawing.Point(135, 3);
+            this.panelCampos.Size = new System.Drawing.Size(446, 135);
+            this.panelCampos.Controls.SetChildIndex(this.lblID, 0);
+            this.panelCampos.Controls.SetChildIndex(this.txtPreco, 0);
+            this.panelCampos.Controls.SetChildIndex(this.txtNome, 0);
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.lblID.Size = new System.Drawing.Size(0, 13);
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tituloIdentificador
+            // 
+            this.tituloIdentificador.Location = new System.Drawing.Point(55, 9);
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 12);
+            this.txtNome.Location = new System.Drawing.Point(12, 34);
             this.txtNome.MaxLength = 150;
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(290, 20);
@@ -61,7 +77,7 @@
             // 
             // txtPreco
             // 
-            this.txtPreco.Location = new System.Drawing.Point(12, 38);
+            this.txtPreco.Location = new System.Drawing.Point(12, 60);
             this.txtPreco.MaxLength = 18;
             this.txtPreco.Name = "txtPreco";
             this.txtPreco.Size = new System.Drawing.Size(100, 20);
@@ -71,7 +87,7 @@
             // 
             this.lblPrecoUnitario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPrecoUnitario.AutoSize = true;
-            this.lblPrecoUnitario.Location = new System.Drawing.Point(46, 41);
+            this.lblPrecoUnitario.Location = new System.Drawing.Point(46, 63);
             this.lblPrecoUnitario.Name = "lblPrecoUnitario";
             this.lblPrecoUnitario.Size = new System.Drawing.Size(74, 13);
             this.lblPrecoUnitario.TabIndex = 5;
@@ -81,7 +97,7 @@
             // 
             this.lblNome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(85, 15);
+            this.lblNome.Location = new System.Drawing.Point(85, 37);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(35, 13);
             this.lblNome.TabIndex = 4;
@@ -99,8 +115,6 @@
             this.ClientSize = new System.Drawing.Size(594, 272);
             this.Name = "CadastroProduto";
             this.Text = "Cadastro de Produto";
-            this.Controls.SetChildIndex(this.panelTitulos, 0);
-            this.Controls.SetChildIndex(this.panelCampos, 0);
             this.panelTitulos.ResumeLayout(false);
             this.panelTitulos.PerformLayout();
             this.panelCampos.ResumeLayout(false);

@@ -23,5 +23,8 @@ namespace JSistemas.BLL.Hortalica
             else if (produto.Preco < 0)
             { throw new Exception("O preço do produto não pode ser menor que zero!"); }
         }
+
+        public DAOProduto Novo()
+        { return new DAOProduto(); }
     }
 }

@@ -16,6 +16,7 @@ namespace JSistemas.UIL.Hortalica.Cadastro
                 { this._produto = new DAOProduto(); }
                 return _produto;
             }
+            set { this._produto = value; }
         }
 
         public CadastroProduto()
@@ -58,5 +59,19 @@ namespace JSistemas.UIL.Hortalica.Cadastro
 
         protected override void Gravar()
         { BLLHortalica.Produto.Gravar(this.Produto); }
+
+        protected override void Novo()
+        {
+            this.Produto = BLLHortalica.Produto.Novo();
+        }
+
+        protected override void FocusControlePadrao()
+        {
+            if (tabControl1.SelectedTab == tabCadastro)
+            {
+                this.txtNome.Focus();
+            }
+        }
+
     }
 }
