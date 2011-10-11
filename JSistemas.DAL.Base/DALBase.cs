@@ -23,7 +23,7 @@ namespace JSistemas.DAL.Base
         private SqlConnection GerarConexao()
         {
             SqlConnectionStringBuilder conf = new SqlConnectionStringBuilder();
-            conf.DataSource = ".";
+            conf.DataSource = "note-jackson,1433";
             conf.UserID = "sa";
             conf.Password = "cidadao";
             conf.InitialCatalog = "JSISTEMAS";
