@@ -41,7 +41,7 @@
             this.botaoGravar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTopoBase = new System.Windows.Forms.Panel();
-            this.labelTopoStatus = new System.Windows.Forms.Label();
+            this.labelTopoStatusBase = new System.Windows.Forms.Label();
             this.botaoOpcoesBase = new System.Windows.Forms.Button();
             this.menuOpcoesBase = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelTitulos = new System.Windows.Forms.Panel();
@@ -53,9 +53,9 @@
             // 
             // panelInferior
             // 
+            this.panelInferior.Controls.Add(this.lblInfo);
             this.panelInferior.Controls.Add(this.lblID);
             this.panelInferior.Controls.Add(this.panel2);
-            this.panelInferior.Controls.Add(this.lblInfo);
             this.panelInferior.Controls.Add(this.panelInferiorEsquerdo);
             this.panelInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelInferior.Location = new System.Drawing.Point(0, 237);
@@ -71,7 +71,6 @@
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(334, 15);
             this.lblID.TabIndex = 1;
-            this.lblID.Text = "Novo Registro";
             this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblID.Click += new System.EventHandler(this.lblID_Click);
             // 
@@ -88,9 +87,9 @@
             // 
             this.lblInfo.BackColor = System.Drawing.SystemColors.Info;
             this.lblInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblInfo.Location = new System.Drawing.Point(259, 0);
+            this.lblInfo.Location = new System.Drawing.Point(260, 15);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(335, 55);
+            this.lblInfo.Size = new System.Drawing.Size(334, 40);
             this.lblInfo.TabIndex = 2;
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 
@@ -167,7 +166,7 @@
             // panelTopoBase
             // 
             this.panelTopoBase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelTopoBase.Controls.Add(this.labelTopoStatus);
+            this.panelTopoBase.Controls.Add(this.labelTopoStatusBase);
             this.panelTopoBase.Controls.Add(this.botaoOpcoesBase);
             this.panelTopoBase.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopoBase.Location = new System.Drawing.Point(0, 0);
@@ -175,15 +174,16 @@
             this.panelTopoBase.Size = new System.Drawing.Size(594, 32);
             this.panelTopoBase.TabIndex = 2;
             // 
-            // labelTopoStatus
+            // labelTopoStatusBase
             // 
-            this.labelTopoStatus.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelTopoStatus.Location = new System.Drawing.Point(32, 0);
-            this.labelTopoStatus.Name = "labelTopoStatus";
-            this.labelTopoStatus.Size = new System.Drawing.Size(560, 30);
-            this.labelTopoStatus.TabIndex = 1;
-            this.labelTopoStatus.Text = "...";
-            this.labelTopoStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTopoStatusBase.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelTopoStatusBase.Location = new System.Drawing.Point(32, 0);
+            this.labelTopoStatusBase.Name = "labelTopoStatusBase";
+            this.labelTopoStatusBase.Size = new System.Drawing.Size(560, 30);
+            this.labelTopoStatusBase.TabIndex = 1;
+            this.labelTopoStatusBase.Text = "Novo Registro";
+            this.labelTopoStatusBase.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTopoStatusBase.Click += new System.EventHandler(this.labelTopoStatus_Click);
             // 
             // botaoOpcoesBase
             // 
@@ -259,7 +259,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelTopoBase;
         private System.Windows.Forms.Button botaoOpcoesBase;
-        private System.Windows.Forms.Label labelTopoStatus;
+        private System.Windows.Forms.Label labelTopoStatusBase;
         protected System.Windows.Forms.Panel panelTitulos;
         protected System.Windows.Forms.Panel panelCampos;
         protected System.Windows.Forms.ContextMenuStrip menuOpcoesBase;

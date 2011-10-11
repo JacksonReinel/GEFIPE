@@ -25,6 +25,11 @@ namespace JSistemas.UIL.Base.Cadastro
             }
         }
 
+        protected String MensagemStatus
+        {
+            set { this.labelTopoStatusBase.Text = value; }
+        }
+
         protected Guid FId { set { this.lblID.Text = value.ToString().ToUpper(); } }
 
         public CadastroBase()
@@ -86,5 +91,10 @@ namespace JSistemas.UIL.Base.Cadastro
 
         private void botaoOpcoesBase_Click(object sender, EventArgs e)
         { menuOpcoesBase.Show(this.botaoOpcoesBase, 16, 16); }
+
+        private void labelTopoStatus_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
