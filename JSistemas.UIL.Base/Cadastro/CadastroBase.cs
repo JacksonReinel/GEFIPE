@@ -30,10 +30,23 @@ namespace JSistemas.UIL.Base.Cadastro
             set { this.labelTopoStatusBase.Text = value; }
         }
 
-        protected Guid FId { set { this.lblID.Text = value.ToString().ToUpper(); } }
+        protected Guid FId
+        {
+            get
+            {
+                if (this.lblID.Text.Trim() == String.Empty)
+                    return Guid.Empty;
+                else
+                    return Guid.Parse(this.lblID.Text);
+            }
+            set { this.lblID.Text = value.ToString().ToUpper(); }
+        }
 
         public CadastroBase()
-        { InitializeComponent(); }
+        {
+            InitializeComponent();
+            this.RealizarPesquisa();
+        }
 
         private void botaoGravar_Click(object sender, System.EventArgs e)
         { this.GravarBase(); }
@@ -54,6 +67,8 @@ namespace JSistemas.UIL.Base.Cadastro
                 this.LerFormularioBase();
                 this.Gravar();
                 this.CarregarFormularioBase();
+                this.miOpcoesExcluirBase.Enabled = this.FId != Guid.Empty;
+                this.MensagemInfo = "Gravado com sucesso!";
             }
             catch (Exception ex)
             { this.ExibirMensagemErro(ex); }
@@ -85,8 +100,14 @@ namespace JSistemas.UIL.Base.Cadastro
 
         private void lblInfo_Click(object sender, EventArgs e)
         {
-            if (this.lblInfo.Text != String.Empty)
-            { Clipboard.SetText(this.lblInfo.Text); }
+            if (String.Concat(this.lblInfo.Text, this.labelTopoStatusBase.Text).Trim() != String.Empty)
+            {
+                Clipboard.SetText(String.Concat(
+                  this.labelTopoStatusBase.Text.ToUpper(),
+                  "\r\n",
+                  "\r\n",
+                  this.lblInfo.Text).Trim());
+            }
         }
 
         private void botaoOpcoesBase_Click(object sender, EventArgs e)
@@ -96,5 +117,92 @@ namespace JSistemas.UIL.Base.Cadastro
         {
 
         }
+
+        private void tabConsulta_Enter(object sender, EventArgs e)
+        {
+            this.botaoGravar.Enabled = false;
+            this.botaoCancelar.Enabled = false;
+            this.miOpcoesExcluirBase.Enabled = this.FId != Guid.Empty;
+            this.MensagemInfo = "F4 - Atualizar Consulta";
+        }
+
+        private void tabCadastro_Enter(object sender, EventArgs e)
+        {
+            this.botaoGravar.Enabled = true;
+            this.botaoCancelar.Enabled = true;
+            this.miOpcoesExcluirBase.Enabled = this.FId != Guid.Empty;
+        }
+
+        private void botaoNovo_Click(object sender, EventArgs e)
+        {
+            this.NovoBase();
+        }
+
+        private void NovoBase()
+        {
+            try
+            {
+                this.MensagemStatus = "Novo Registro";
+                tabControl1.SelectedTab = tabCadastro;
+                this.Novo();
+                this.CarregarFormulario();
+            }
+            catch (Exception ex)
+            { this.MensagemErro = ex.Message; }
+        }
+
+        protected virtual void Novo()
+        { throw new NotImplementedException("Novo não implementado"); }
+
+        protected virtual void FocusControlePadrao() { }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        { this.ExcluirBase(); }
+
+        private void ExcluirBase()
+        {
+            try
+            {
+                this.MensagemStatus = "Excluindo registro";
+                DialogResult resposta = MessageBox.Show(
+                    "Confirmação exclusão desse registro?",
+                    "Confirmação do usuário",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+                if (resposta != DialogResult.Yes)
+                { return; }
+                this.Excluir();
+                this.NovoBase();
+                this.MensagemInfo = "Excluido com sucesso!";
+            }
+            catch (Exception ex)
+            { this.MensagemErro = ex.Message; }
+        }
+
+        protected virtual void Excluir()
+        { throw new NotImplementedException("Excluir não implementado!"); }
+
+        private void CadastroBase_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            { this.Close(); }
+            else if (e.KeyCode == Keys.F4 && tabControl1.SelectedTab == tabConsulta)
+            { this.RealizarPesquisaBase(); }
+        }
+
+        private void RealizarPesquisaBase()
+        {
+            try
+            {
+                this.MensagemInfo = "Consultando...";
+                this.RealizarPesquisa();
+                this.MensagemInfo = "Consulta Concluida!\r\nF4 - Atualiza Consulta";
+            }
+            catch (Exception ex)
+            { this.MensagemErro = ex.Message; }
+        }
+
+        protected virtual void RealizarPesquisa() { }
     }
 }
