@@ -51,7 +51,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConsulta = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gridConsulta = new System.Windows.Forms.DataGridView();
             this.colGUID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabCadastro = new System.Windows.Forms.TabPage();
             this.panelInferior.SuspendLayout();
@@ -62,7 +62,7 @@
             this.panelCampos.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).BeginInit();
             this.tabCadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -295,7 +295,7 @@
             // tabConsulta
             // 
             this.tabConsulta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabConsulta.Controls.Add(this.dataGridView1);
+            this.tabConsulta.Controls.Add(this.gridConsulta);
             this.tabConsulta.Location = new System.Drawing.Point(4, 36);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
@@ -305,18 +305,23 @@
             this.tabConsulta.UseVisualStyleBackColor = true;
             this.tabConsulta.Enter += new System.EventHandler(this.tabConsulta_Enter);
             // 
-            // dataGridView1
+            // gridConsulta
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gridConsulta.AllowUserToAddRows = false;
+            this.gridConsulta.AllowUserToDeleteRows = false;
+            this.gridConsulta.AllowUserToResizeRows = false;
+            this.gridConsulta.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.gridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridConsulta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colGUID});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 155);
-            this.dataGridView1.TabIndex = 0;
+            this.gridConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridConsulta.Location = new System.Drawing.Point(3, 3);
+            this.gridConsulta.Name = "gridConsulta";
+            this.gridConsulta.ReadOnly = true;
+            this.gridConsulta.RowHeadersVisible = false;
+            this.gridConsulta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridConsulta.Size = new System.Drawing.Size(578, 155);
+            this.gridConsulta.TabIndex = 0;
             // 
             // colGUID
             // 
@@ -367,7 +372,7 @@
             this.panelCampos.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabConsulta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridConsulta)).EndInit();
             this.tabCadastro.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -398,7 +403,7 @@
         protected System.Windows.Forms.TabControl tabControl1;
         protected System.Windows.Forms.TabPage tabConsulta;
         protected System.Windows.Forms.TabPage tabCadastro;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colGUID;
+        protected System.Windows.Forms.DataGridViewTextBoxColumn colGUID;
+        protected System.Windows.Forms.DataGridView gridConsulta;
     }
 }

@@ -2,6 +2,8 @@
 using JSistemas.DAO.Hortalica;
 using System;
 using JSistemas.BLL.Hortalica;
+using System.Data;
+using System.Windows.Forms;
 
 namespace JSistemas.UIL.Hortalica.Cadastro
 {
@@ -24,6 +26,9 @@ namespace JSistemas.UIL.Hortalica.Cadastro
             InitializeComponent();
             this.txtNome.ContextMenuStrip = menuOpcoesBase;
             base.panelTitulos.ContextMenuStrip = menuOpcoesBase;
+            this.colGUID.DataPropertyName = "PRODUTO_ID";
+
+            base.AdicionarColuna("PRODUTO_NOME", "Produto").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private String FNome
@@ -73,5 +78,11 @@ namespace JSistemas.UIL.Hortalica.Cadastro
             }
         }
 
+        private DataTable FGridSource { set { base.gridConsulta.DataSource = value; } }
+
+        protected override void RealizarPesquisa()
+        {
+            this.FGridSource = BLLHortalica.Produto.Consultar();
+        }
     }
 }

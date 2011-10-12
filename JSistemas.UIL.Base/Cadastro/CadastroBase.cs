@@ -13,6 +13,7 @@ namespace JSistemas.UIL.Base.Cadastro
             {
                 this.lblInfo.Text = value;
                 this.lblInfo.ForeColor = Color.Red;
+                Application.DoEvents();
             }
         }
 
@@ -22,12 +23,17 @@ namespace JSistemas.UIL.Base.Cadastro
             {
                 this.lblInfo.Text = value;
                 this.lblInfo.ForeColor = Color.Blue;
+                Application.DoEvents();
             }
         }
 
         protected String MensagemStatus
         {
-            set { this.labelTopoStatusBase.Text = value; }
+            set
+            {
+                this.labelTopoStatusBase.Text = value;
+                Application.DoEvents();
+            }
         }
 
         protected Guid FId
@@ -45,6 +51,7 @@ namespace JSistemas.UIL.Base.Cadastro
         public CadastroBase()
         {
             InitializeComponent();
+            this.gridConsulta.AutoGenerateColumns = false;
             this.RealizarPesquisa();
         }
 
@@ -64,6 +71,7 @@ namespace JSistemas.UIL.Base.Cadastro
         {
             try
             {
+                this.MensagemInfo = "Gravando, aguarde...";
                 this.LerFormularioBase();
                 this.Gravar();
                 this.CarregarFormularioBase();
@@ -123,11 +131,13 @@ namespace JSistemas.UIL.Base.Cadastro
             this.botaoGravar.Enabled = false;
             this.botaoCancelar.Enabled = false;
             this.miOpcoesExcluirBase.Enabled = this.FId != Guid.Empty;
+            this.MensagemStatus = "Consulta";
             this.MensagemInfo = "F4 - Atualizar Consulta";
         }
 
         private void tabCadastro_Enter(object sender, EventArgs e)
         {
+            this.MensagemStatus = "Cadastro";
             this.MensagemInfo = String.Empty;
             this.botaoGravar.Enabled = true;
             this.botaoCancelar.Enabled = true;
@@ -144,6 +154,7 @@ namespace JSistemas.UIL.Base.Cadastro
             try
             {
                 this.MensagemStatus = "Novo Registro";
+                this.MensagemInfo = String.Empty;
                 tabControl1.SelectedTab = tabCadastro;
                 this.Novo();
                 this.CarregarFormulario();
@@ -212,5 +223,14 @@ namespace JSistemas.UIL.Base.Cadastro
         }
 
         protected virtual void RealizarPesquisa() { }
+
+        protected DataGridViewTextBoxColumn AdicionarColuna(String campo, String titulo = "")
+        {
+            DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+            col.DataPropertyName = campo;
+            col.HeaderText = titulo;
+            this.gridConsulta.Columns.Add(col);
+            return col;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using JSistemas.BLL.Base;
 using JSistemas.DAO.Hortalica;
 using JSistemas.DAL.Hortalica;
+using System.Data;
 
 namespace JSistemas.BLL.Hortalica
 {
@@ -26,5 +27,8 @@ namespace JSistemas.BLL.Hortalica
 
         public DAOProduto Novo()
         { return new DAOProduto(); }
+
+        public DataTable Consultar()
+        { return DALHortalica.Produto.Consultar(); }
     }
 }

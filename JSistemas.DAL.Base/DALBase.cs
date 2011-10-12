@@ -41,6 +41,18 @@ namespace JSistemas.DAL.Base
         public void ExecutarComando(String sql)
         { this.ExecutarComando(this.GerarComando(sql)); }
 
+        protected SqlDataReader AbrirComando(SqlCommand cmd)
+        {
+            this.Conectar();
+            SqlDataReader leitor = cmd.ExecuteReader();
+            if (leitor != null && !leitor.IsClosed && !leitor.HasRows)
+            {
+                leitor.Close();
+                leitor = null;
+            }
+            return leitor;
+        }
+
         public void ExecutarComando(SqlCommand cmd)
         {
             this.Conectar();
