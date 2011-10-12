@@ -81,10 +81,12 @@
             // 
             this.lblInfo.BackColor = System.Drawing.SystemColors.Info;
             this.lblInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblInfo.ForeColor = System.Drawing.Color.Blue;
             this.lblInfo.Location = new System.Drawing.Point(260, 0);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(334, 56);
             this.lblInfo.TabIndex = 2;
+            this.lblInfo.Text = "F4 - Atualizar Consulta";
             this.lblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblInfo.Click += new System.EventHandler(this.lblInfo_Click);
             // 

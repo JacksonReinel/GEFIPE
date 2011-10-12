@@ -128,6 +128,7 @@ namespace JSistemas.UIL.Base.Cadastro
 
         private void tabCadastro_Enter(object sender, EventArgs e)
         {
+            this.MensagemInfo = String.Empty;
             this.botaoGravar.Enabled = true;
             this.botaoCancelar.Enabled = true;
             this.miOpcoesExcluirBase.Enabled = this.FId != Guid.Empty;
@@ -189,12 +190,19 @@ namespace JSistemas.UIL.Base.Cadastro
             { this.Close(); }
             else if (e.KeyCode == Keys.F4 && tabControl1.SelectedTab == tabConsulta)
             { this.RealizarPesquisaBase(); }
+            else if (e.KeyCode == Keys.Insert || e.KeyCode == Keys.F5)
+            { this.NovoBase(); }
+            else if (e.KeyCode == Keys.F2)
+            { tabControl1.SelectedTab = tabConsulta; }
+            else if (e.KeyCode == Keys.F3)
+            { tabControl1.SelectedTab = tabCadastro; }
         }
 
         private void RealizarPesquisaBase()
         {
             try
             {
+                this.MensagemStatus = "Consulta";
                 this.MensagemInfo = "Consultando...";
                 this.RealizarPesquisa();
                 this.MensagemInfo = "Consulta Concluida!\r\nF4 - Atualiza Consulta";
